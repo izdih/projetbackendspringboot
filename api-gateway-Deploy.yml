@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-guide
+  template:
+    metadata:
+      labels:
+        app: app-guide
+    spec:
+      containers:
+        - name: api-gateway
+          image: chetouiiftikhar/api-gateway:01
+
+          ports:
+            - containerPort: 8089
+
+
+

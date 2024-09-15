@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: category-service
+          uri: http://localhost:8085
+          predicates:
+            - Path= /attractions/**
+server:
+  port: 8089
